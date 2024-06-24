@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Selesaikan persamaan berikut ini dengan metode Eliminasi Gaussian &#8212; My sample book</title>
+    <title>1. sistem linear &#8212; My sample book</title>
   
   
   
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas01';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Aljabar matriks" href="tugas02.html" />
+    <link rel="next" title="2. aljabar matriks" href="tugas02.html" />
     <link rel="prev" title="Welcome to my JupyterBook nurjennah 23-038" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -180,14 +180,15 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Selesaikan persamaan berikut ini dengan metode Eliminasi Gaussian</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tugas02.html">Aljabar matriks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. sistem linear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tugas02.html">2. aljabar matriks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas03.html">Matrix Invers</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="tugas04.html">1. Determinan dari matrik indentitas yg menghasilkan 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tugas04.html">4. Determinan matriks</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="tugas05.html">05.Transformasi Linier</a></li>
 </ul>
 
@@ -372,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Selesaikan persamaan berikut ini dengan metode Eliminasi Gaussian</h1>
+    <h1>1. sistem linear</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -386,7 +387,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><strong>TUGAS</strong> <strong>1</strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="sistem-linear">
+<h1>1. sistem linear<a class="headerlink" href="#sistem-linear" title="Link to this heading">#</a></h1>
+<p><strong>TUGAS</strong> <strong>1</strong></p>
 <p><strong>SISTEM LINEAR DAN METODE ELIMINASI GAUSSIAN</strong></p>
 <p><strong>ELIMINASI GAUSSIAN</strong></p>
 <p>Eliminasi gaussian ditemukan oleh Carl Friedrich Guss,metode ini dapat dimanfaatkan untuk memecahkan sistem persamaan linear dengan merepresentasikan(mengubah) menjadi bentuk matriks,matriks tersebut lalu diubah dalam bentuk Eselon Baris melalui operasi Baris Elemter. lalu sistem diselesaikan dengan subtitusi balik.</p>
@@ -404,14 +407,12 @@ document.write(`
 <li><p>Gantikan suatu persamaan dengan jumlah persamaan itu sendiri dan kelipatan persamaan lainnya.</p></li>
 </ol>
 <p>yang pertama deklarasikan RowSwap, RowAdd dan RowScale untuk perhitungan selanjutnya</p>
-<section class="tex2jax_ignore mathjax_ignore" id="selesaikan-persamaan-berikut-ini-dengan-metode-eliminasi-gaussian">
-<h1>Selesaikan persamaan berikut ini dengan metode Eliminasi Gaussian<a class="headerlink" href="#selesaikan-persamaan-berikut-ini-dengan-metode-eliminasi-gaussian" title="Link to this heading">#</a></h1>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p>Selesaikan persamaan berikut ini dengan metode Eliminasi Gaussian
+$<span class="math notranslate nohighlight">\(
 8x_1+9x_2+x_3&amp;=&amp;19\\
 x_1+2x_2+3x_3&amp;=&amp;9\\
 2x_1+x_2+x_3&amp;=&amp;5\\
-\end{split}\]</div>
+\)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -707,7 +708,7 @@ x1: 1
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Aljabar matriks</p>
+        <p class="prev-next-title">2. aljabar matriks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
