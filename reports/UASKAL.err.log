@@ -1,0 +1,73 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Soal 2: Menyelesaikan sistem persamaan linear dengan Eliminasi Gauss
+def eliminasi_gauss(A, b):
+    n = len(b)
+
+    # Eliminasi maju
+    for i in range(n):
+        # Membuat elemen diagonal menjadi 1
+        faktor = A[i][i]
+        for j in range(i, n):
+            A[i][j] /= faktor
+        b[i] /= faktor
+
+        # Membuat elemen di bawah pivot menjadi 0
+        for k in range(i + 1, n):
+            faktor = A[k][i]
+            for j in range(i, n):
+                A[k][j] -= faktor * A[i][j]
+            b[k] -= faktor * b[i]
+
+    # Substitusi balik
+    x = np.zeros(n)
+    for i in range(n - 1, -1, -1):
+        x[i] = b[i] - sum(A[i][j] * x[j] for j in range(i + 1, n))
+
+    return x
+
+# Menyelesaikan kedua soal
+pagerank_hasil = hitung_pagerank()
+A = np.array([[1, -1, 1], [2, 1, 3], [6, 0, -1]], dtype=float)
+b = np.array([3, 8, 4], dtype=float)
+eliminasi_gauss_hasil = eliminasi_gauss(A, b)
+
+# Menampilkan hasil
+print("Hasil PageRank:")
+for node, rank in pagerank_hasil.items():
+    print(f"Node {node}: {rank:.4f}")
+
+print("\nHasil Eliminasi Gauss:")
+for i, value in enumerate(eliminasi_gauss_hasil, 1):
+    print(f"x{i} = {value:.4f}")
+
+
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-2-3a86b3fce51f>[0m in [0;36m<cell line: 28>[0;34m()[0m
+[1;32m     26[0m [0;34m[0m[0m
+[1;32m     27[0m [0;31m# Menyelesaikan kedua soal[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 28[0;31m [0mpagerank_hasil[0m [0;34m=[0m [0mhitung_pagerank[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     29[0m [0mA[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0marray[0m[0;34m([0m[0;34m[[0m[0;34m[[0m[0;36m1[0m[0;34m,[0m [0;34m-[0m[0;36m1[0m[0;34m,[0m [0;36m1[0m[0;34m][0m[0;34m,[0m [0;34m[[0m[0;36m2[0m[0;34m,[0m [0;36m1[0m[0;34m,[0m [0;36m3[0m[0;34m][0m[0;34m,[0m [0;34m[[0m[0;36m6[0m[0;34m,[0m [0;36m0[0m[0;34m,[0m [0;34m-[0m[0;36m1[0m[0;34m][0m[0;34m][0m[0;34m,[0m [0mdtype[0m[0;34m=[0m[0mfloat[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     30[0m [0mb[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0marray[0m[0;34m([0m[0;34m[[0m[0;36m3[0m[0;34m,[0m [0;36m8[0m[0;34m,[0m [0;36m4[0m[0;34m][0m[0;34m,[0m [0mdtype[0m[0;34m=[0m[0mfloat[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNameError[0m: name 'hitung_pagerank' is not defined
+
